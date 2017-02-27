@@ -10,10 +10,10 @@ read -p "Wie soll die IP Adresse von deinem RasPI lauten? (e.g. 192.168.8.100):"
 read -p "Wie lautet die Subnetmask? (e.g. 255.255.255.0):" subnetraspi
 read -p "Wie lautet die IP vom Router? (e.g. 192.168.8.1):" iprouter
 
-echo "Deine Eingaben: "\n
-echo "Raspberry IP: "$ipraspi\n
-echo "Subnetmask: "$subnetraspi\n
-echo "IP vom Router: "$iprouter\n
+echo "Deine Eingaben: "
+echo "Raspberry IP: "$ipraspi
+echo "Subnetmask: "$subnetraspi
+echo "IP vom Router: "$iprouter
 
 # Change anything beyond this point
 ###########################################
