@@ -5,31 +5,38 @@
 #   Feel free to copy & share this script   #
 #############################################
 
+echo "Das Einstellungsscript wurde gestartet!"
+read -p "Wie soll die IP Adresse von deinem RasPI lauten? (e.g. 192.168.8.100):" ipraspi
+read -p "Wie lautet die Subnetmask? (e.g. 255.255.255.0):" subnetraspi
+read -p "Wie lautet die IP vom Router? (e.g. 192.168.8.1):" iprouter
+
+echo "Deine Eingaben: "\n
+echo "Raspberry IP: "$ipraspi\n
+echo "Subnetmask: "$subnetraspi\n
+echo "IP vom Router: "$iprouter\n
+
 # Change anything beyond this point
 ###########################################
 
 # the IP of your raspberry
-raspi_client_ip="192.168.2.2"
+#raspi_client_ip="192.168.2.2"
 # subnetmask
-raspi_client_nm="255.255.255.0"
+#raspi_client_nm="255.255.255.0"
 # the IP of your router
-raspi_client_gw="192.168.2.1"
+#raspi_client_gw="192.168.2.1"
 
 # Don't change anything beyond this point
 ###########################################
 
 # Reconfigure interfaces
-cat > /etc/network/interfaces <<EOF
-auto lo
-iface lo inet loopback
 
-auto eth0
-iface eth0 inet static
-address $raspi_client_ip
-gateway $raspi_client_gw
-netmask $raspi_client_nm
+#cat > /etc/network/interfaces <<EOF
+#auto lo
+#iface lo inet loopback
 
-auto eth0:0
-iface eth0:0 inet static
-address $raspi_gateway_ip
-EOF
+#auto eth0
+#iface eth0 inet static
+#address $ipraspi        #vorher raspi_client_ip="192.168.2.2"
+#gateway $subnetraspi    #vorher raspi_client_nm="255.255.255.0"
+#netmask $iprouter       #vorher raspi_client_gw="192.168.2.1"
+#EOF
